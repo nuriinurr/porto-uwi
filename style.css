@@ -276,6 +276,10 @@ section{
         top: 2rem;
         right: 2rem;
     }
+
+    .image img {
+        display: none;
+}
 }
 
 .image img {
