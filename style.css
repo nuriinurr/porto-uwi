@@ -1,0 +1,693 @@
+@import url('https://font.googleapis.com//css2? family=Poppins:wght@300,;400;500;600;700;800;900;display=swap');
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    border: none;
+    outline: none;
+    scroll-behavior: smooth;
+    font-family: 'Poppins', sans-serif;
+}
+
+html{
+    font: 62.5%;
+    overflow-x: hidden;
+}
+
+
+body {
+    color:white;
+    background: black;
+}
+
+.header{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;    
+    padding: 2rem 9%;
+    background-color: black;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 100;
+}
+
+section{
+    min-height: 100vh;
+    padding: 10rem 9% 2rem;
+}
+
+.logo {
+    position: relative;
+    font-size: 25px;
+    color: rgb(253, 252, 252);
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.logo::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    background:black;
+    animation: showRight 1s  ease forwards;
+    animation-delay: .4s;
+}
+
+.navbar a {
+    font-size: 18px;
+    color: white;
+    text-decoration: none;
+    font-weight: 500;
+    margin-left: 35px;
+    transition: .3s;
+}
+
+.navbar a:hover,
+.navbar a.active {
+    color: rgb(229, 56, 245);
+
+}
+   
+#home{
+    height: 100px;
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: center;
+    padding: 0 10%;
+    background-color: black;
+}
+
+.home-content h1 {
+    font-size: 56px;
+    font-weight: 700;
+    color: rgb(250, 248, 248);
+}
+
+.home-content p {
+    font-size: 30px;
+    margin: 20px 0 40px; 
+}
+
+.home-content .btn-box {
+    display: flex;
+    justify-content: space-between;
+    width: 345px;
+    height: 50px;
+    
+}
+
+.text-animate {
+    font-size: 25px;
+}
+
+.home-content h3 {
+    display: inline-block;
+    font-size: 30px;
+    font-weight: 700; 
+    color: rgb(214, 53, 193);
+    border-right: 3px solid #fff; 
+    white-space: nowrap;
+    overflow: hidden;
+    animation: typing 8s steps(18, end) infinite, blink 0.75s step-end infinite;
+    width: 0;
+}
+
+@keyframes typing {
+    0% {
+        width: 0;
+    }
+    50% {
+       width: 18ch; 
+    }
+    100% {
+        width: 0; 
+    }
+}
+
+
+@keyframes blink {
+    50% {
+        border-color: transparent;
+    }
+}
+
+.btn-box a {
+    position: relative;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 160px;
+    height: 100%;
+    background: rgb(167, 25, 172);
+    border: 2px solid rgb(124, 7, 89);
+    border-radius: 8px;
+    font-size: 19px;
+    color: white;
+    text-decoration: none;
+    font-weight: 600;
+    letter-spacing: 1px;
+    z-index: 1;
+    overflow: hidden;
+    
+}
+
+.btn-box a:nth-child(2) {
+    background: transparent;
+    color: white;
+}
+
+.btn-box a:nth-child(2):hover {
+    color:rgb(253, 249, 249);
+}
+
+.btn-box a:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 100%;
+    background: #f76ff7;
+    z-index: -1;
+    transition: .5s;
+}
+
+.btn-box a:hover::before {
+    width: 100%;
+
+}
+
+.home-sci {
+    position: absolute;
+    bottom: -1rem;
+    width: 170px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.home-sci a {
+    position: relative;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 40px;
+    height: 40px;
+    background: transparent;
+    border: 2px solid rgb(179, 26, 184);
+    border-radius: 50%;
+    font-size: 20px;
+    color:rgb(107, 76, 243);
+    text-decoration: none;
+    z-index: 1;
+    overflow: hidden;
+    margin-bottom: 7rem;
+}
+
+.home-sci a::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 100%;
+    background-color:rgb(167, 25, 172);
+    z-index: -1;
+    transition: .5s;  
+}
+
+
+.home-sci a:hover::before{
+    width: 100%;
+}
+
+@media (max-width: 768px) {
+    .home-sci {
+        margin-top: 30px; 
+        width: 100%; 
+        justify-content: flex-start; 
+        gap: 1rem;
+    }
+}
+
+.menu-toggle {
+    display: none;
+    cursor: pointer;
+}
+
+.menu-toggle i {
+    font-size: 2.5rem;
+    color: white;
+}
+
+@media (max-width: 768px) {
+    .navbar {
+        position: fixed;
+        top: 0;
+        right: -100%;
+        height: 100%;
+        width: 200px;
+        background-color: rgba(0, 0, 0, 0.9);
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        transition: 0.5s;
+    }
+
+    .navbar a {
+        font-size: 1.2rem;
+        margin: 1.5rem 0;
+    }
+
+    .navbar.active {
+        right: 0;
+    }
+
+    .menu-toggle {
+        display: block;
+        position: absolute;
+        top: 2rem;
+        right: 2rem;
+    }
+}
+
+.image img {
+    height: 900px;
+    border-radius: 50px;
+    margin-left: 10rem;
+    margin-top: 8rem;
+}
+
+/* KEYFRAMES ANIMATION */
+@keyframes showRight {
+    100% {
+        width: 0;
+
+    }
+}
+
+.about {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 2rem;
+    background:black;
+    padding-bottom: 6rem;
+}
+
+.heading {
+    font-size: 3rem;
+    margin-bottom: 3rem;
+    text-align: center;
+}
+
+span {
+    color: #f76ff7;
+}
+
+.about-img {
+    position: relative;
+    width: 15rem;
+    height: 15rem;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.about-img img {
+    width: 70%;
+    border-radius: 50%;
+    border: .2rem solid #f76ff7
+}
+
+.about-img .circle-spin {
+    position: absolute;
+    top: 40%;
+    left: 40%;
+    transform: translate(-40%, -40%) rotate(0);
+    width: 90%;
+    height: 90%;
+    border-radius: 50%;
+    border-top: .2rem solid black;
+    border-bottom: .2rem solid black;
+    border-left: .2rem solid #f76ff7;
+    border-right:.2rem solid #f76ff7 ;
+    animation: aboutSpinner 8s linear infinite;
+    
+}
+
+.about-content {
+    text-align: center;
+}
+
+.about-content p {
+    font-size: 1.6rem;
+    margin: 2rem 0 3rem;
+}
+
+.btn-box.btns {
+    display: inline-block;
+    width: 15rem;
+}
+
+.btn-box.btns a::before {
+    background: #f76ff7;
+}
+
+.services h2{
+    margin-bottom: 5rem;
+}
+
+.services-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 2rem;
+}
+
+.services-container .services-box  {
+    flex: 1;
+    padding: 3rem 2rem 4rem;
+    background: #000000;
+    text-align: center;
+    border-radius: 2rem;
+    transition: .1s ease-in-out;
+    color: white;
+}
+
+.services-container .services-box:hover{
+    border-color: #f76ff7;
+    border: .1rem solid #f76ff7;
+    transform: scale(1.03);
+
+}
+
+.services-box i{
+    font-size: 5rem;
+    color: #f76ff7;
+}
+
+.services-box h3{
+    font-size: 2rem;
+}
+
+.services-box p{
+    font-size: 1rem;
+    margin: 1rem 0 3rem;    
+}
+
+.sekolah{
+    text-align: center;
+}
+
+.school {
+    text-align: center;
+    flex: 1;
+    padding: 3rem 2rem 4rem;
+    background: #000000;
+    text-align: center;
+    border-radius: 2rem;
+    transition: .1s ease-in-out;
+    color: white;
+    margin: 30px;
+    padding: 10px;
+    width: 300px;
+    margin-left: 10px;
+    display: inline-block;
+}
+
+.school:hover{
+    border-color: #f76ff7;
+    border: .2rem solid #f76ff7;
+    transform: scale(1.08);
+}
+
+.school h2 {
+    color: #f76ff7;
+
+}
+
+.sekolah .heading{
+    font-size: 5rem;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+/* Styling section contact */
+.contact {
+    background-color: #000000;
+    padding: 50px 0;
+}
+
+.contact h2 {
+    font-size: 2.5rem;
+    text-align: center;
+    margin-bottom: 3rem;
+    color: #ffffff;
+}
+
+.contact h2 span {
+    color: #f76ff7; 
+}
+
+.contact form {
+    max-width: 600px;
+    margin: 0 auto; 
+    text-align: center;
+    background: rgb(0, 0, 0); 
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.1); 
+}
+
+.input-box {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 15px;
+}
+
+.input-box input,
+textarea {
+    width: calc(50% - 10px); 
+    padding: 15px;
+    font-size: 1rem;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    outline: none;
+    transition: all 0.3s ease;
+}
+
+.input-box input:focus,
+textarea:focus {
+    border-color: #f76ff7;
+    box-shadow: 0 0 8px rgba(247, 111, 247, 0.4);
+}
+
+textarea {
+    width: 100%;
+    height: 150px;
+    resize: none;
+}
+
+.btn-box {
+    text-align: center;
+}
+
+
+.btn {
+    position: relative;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 160px;
+    height: 100%;
+    background: rgb(167, 25, 172);
+    border: 2px solid rgb(124, 7, 89);
+    border-radius: 8px;
+    font-size: 19px;
+    color: white;
+    text-decoration: none;
+    font-weight: 600;
+    letter-spacing: 1px;
+    z-index: 1;
+    overflow: hidden;
+    transition: .5s;
+}
+
+.btn:hover {
+    color: #ffffff; 
+}
+
+.btn::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 100%;
+    background: #f76ff7;
+    z-index: -1;
+    transition: .5s;
+}
+
+.btn:hover::before {
+    width: 100%; 
+}
+
+.portofolio {
+    padding: 50px 20px; /* Tambahkan padding untuk memberikan ruang di sekitar konten */
+    text-align: center; /* Pusatkan teks di dalam section */
+}
+
+.portfolio-container {
+    display: flex;
+    flex-wrap: wrap; /* Agar elemen membungkus ke baris baru */
+    justify-content: center; /* Pusatkan konten */
+    gap: 20px; /* Jarak antar box */
+}
+.btn {
+    display: inline-block; /* Agar tombol tidak mengisi seluruh lebar */
+    background-color: #ad25b9; /* Warna latar belakang tombol (hijau) */
+    color: white; /* Warna teks tombol */
+    padding: 5px 15px; /* Padding di dalam tombol (disesuaikan) */
+    border: none; /* Menghilangkan border default */
+    border-radius: 3px; /* Sudut membulat pada tombol (lebih kecil) */
+    text-decoration: none; /* Menghilangkan garis bawah pada tautan */
+    font-size: 14px; /* Ukuran font untuk tombol (lebih kecil) */
+    transition: background-color 0.3s, transform 0.3s; /* Efek transisi saat hover */
+    margin: 0 auto; /* Untuk memusatkan tombol dalam konteks block */
+    width: 130px;
+    height: auto;
+}
+
+.btn:hover {
+    background-color:#ad25b9; /* Warna latar belakang saat hover (hijau gelap) */
+    transform: scale(1.05); /* Efek zoom saat hover */
+}
+
+.btn-box {
+    text-align: center; /* Memusatkan konten dalam box */
+}
+
+.portfolio-box {
+    position: relative;
+    width: 300px; /* Ukuran tetap untuk setiap box */
+    overflow: hidden; /* Agar elemen yang meluap tidak terlihat */
+    border-radius: 10px; /* Sudut membulat */
+    transition: transform 0.3s; /* Efek transisi saat hover */
+}
+
+.portfolio-box:hover {
+    transform: scale(1.05); /* Efek zoom saat hover */
+}
+
+.portfolio-box img {
+    width: 100%; /* Mengatur gambar agar responsif */
+    height: auto; /* Tinggi otomatis agar proporsional */
+    border-radius: 10px; /* Sudut membulat gambar */
+}
+
+.portfolio-layer {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: rgba(0, 0, 0, 0.7); /* Latar belakang semi-transparan */
+    color: #fff; /* Warna teks putih */
+    padding: 20px; /* Padding dalam layer */
+    text-align: left; /* Rata kiri untuk teks */
+    opacity: 0; /* Mulai dengan layer tidak terlihat */
+    transition: opacity 0.3s; /* Efek transisi untuk opacity */
+}
+
+.portfolio-box:hover .portfolio-layer {
+    opacity: 1; /* Tampilkan layer saat hover */
+}
+
+.teks {
+    margin: 0; /* Hilangkan margin default */
+}
+
+@media (max-width: 768px) {
+    .portfolio-container {
+        flex-direction: column; /* Ubah menjadi kolom di perangkat kecil */
+        align-items: center; /* Pusatkan box portofolio */
+    }
+
+    .portfolio-box {
+        width: 90%; /* Lebar lebih besar untuk perangkat kecil */
+    }
+}
+
+
+.footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    padding: 2rem 9%;
+    background:black;
+}
+
+.footer-text {
+    position: 1.6rem;
+}
+
+.footer-iconTop a {
+    position: relative;
+    display: inline-block;
+    justify-content: center;
+    align-items: center;
+    padding: .8rem;
+    background:rgb(167, 25, 172);
+    border: .2rem solid #f76ff7;
+    border-radius: .6rem;
+    z-index: 1;
+    overflow: hidden;
+}
+
+.footer-iconTop a::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 100%;
+    background: #f76ff7;
+    z-index: -1;
+    transition: .5s;
+}
+
+.footer-iconTop a:hover::before {
+    width: 1005%;
+}
+
+.footer-iconTop a i {
+    color: black;
+    transition: .5s;
+}
+
+.footer-iconTop a:hover i {
+    color: black;
+}
+
+@keyframes aboutSpinner {
+    100% {
+       transform: translate(-40%, -40%) rotate(360deg); 
+    }
+}
